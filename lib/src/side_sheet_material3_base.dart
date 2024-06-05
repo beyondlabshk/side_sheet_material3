@@ -160,6 +160,7 @@ class SideSheetMaterial3 extends StatelessWidget {
     required this.addDivider,
     required this.safeAreaBottom,
     required this.safeAreaTop,
+    this.maxWidth,
     required this.cancelActionOnPressed,
     required this.confirmActionOnPressed,
     required this.cancelActionTitle,
