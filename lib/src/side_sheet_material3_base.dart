@@ -79,6 +79,7 @@ Future<void> showModalSideSheet(
   String cancelActionTitle = 'Cancel',
   String? closeButtonTooltip = 'Close',
   String? backButtonTooltip = 'Back',
+  double? maxWidth,
   void Function()? confirmActionOnPressed,
   void Function()? cancelActionOnPressed,
   void Function()? onDismiss,
@@ -110,6 +111,7 @@ Future<void> showModalSideSheet(
           addDivider: addDivider,
           safeAreaTop: safeAreaTop,
           safeAreaBottom: safeAreaBottom,
+          maxWidth: maxWidth,
           confirmActionOnPressed: confirmActionOnPressed,
           cancelActionOnPressed: cancelActionOnPressed,
           confirmActionTitle: confirmActionTitle,
@@ -144,6 +146,7 @@ class SideSheetMaterial3 extends StatelessWidget {
   final String cancelActionTitle;
   final String? closeButtonTooltip;
   final String? backButtonTooltip;
+  final double? maxWidth;
 
   final void Function()? confirmActionOnPressed;
   final void Function()? cancelActionOnPressed;
@@ -186,7 +189,7 @@ class SideSheetMaterial3 extends StatelessWidget {
         child: Container(
           constraints: BoxConstraints(
             minWidth: 256,
-            maxWidth: size.width <= 600 ? size.width : 400,
+            maxWidth: maxWidth ?? (size.width <= 600 ? size.width : 400),
             minHeight: size.height,
             maxHeight: size.height,
           ),
